@@ -21,8 +21,6 @@ jobs:
     - name: Set up Python
       run: |
         choco install python --version 3.8.10 -y
-        echo 'export PATH="/c/Python38:/c/Python38/Scripts:$PATH"' >> $GITHUB_ENV
-        python --version
 
     - name: Install dependencies
       run: |
