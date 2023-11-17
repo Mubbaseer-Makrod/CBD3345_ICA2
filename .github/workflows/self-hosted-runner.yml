@@ -13,10 +13,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    # - name: Set up Python
+    #   uses: actions/setup-python@v2
+    #   with:
+    #     python-version: 3.8
+
     - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
+      run: |
+        choco install python --version 3.8.10 -y
+        echo 'export PATH="/c/Python38:/c/Python38/Scripts:$PATH"' >> $GITHUB_ENV
+        python --version
 
     - name: Install dependencies
       run: |
