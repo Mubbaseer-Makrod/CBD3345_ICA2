@@ -20,7 +20,7 @@ jobs:
 
     - name: Set up Python
       run: |
-        choco install python --version 3.8.10 -y
+        choco install python --version 3.8.10 -y -ExecutionPolicy Bypass
 
     - name: Install dependencies
       run: |
