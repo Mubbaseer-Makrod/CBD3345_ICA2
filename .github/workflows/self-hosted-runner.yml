@@ -13,19 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # - name: Set up Python
-    #   uses: actions/setup-python@v2
-    #   with:
-    #     python-version: 3.8
-
-    - name: Install Chocolatey
-      run: |
-        $chocoPath = "$env:ChocolateyInstall\bin\choco.exe"
-        Start-Process powershell.exe -Verb runAs -ArgumentList "& '$chocoPath' install python --version 3.8.10 -y"
-
     - name: Set up Python
-      run: |
-        choco install python --version 3.8.10 -y
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
